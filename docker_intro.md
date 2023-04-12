@@ -321,4 +321,8 @@ docker run -d -p 80:80 rbn-server
 ```
 Hier steht das "-d" für "detached mode" und bedeutet soviel, als dass der Docker container im Hintergrund läuft. "-p 80:80" leitet den internen Port auf den äußeren Port 80 weiter. 
 
-Nun <IP-oder-Web-Adresse>:<PORT-Nummer> im Webbrowser aufrufen und das Resultat betrachten.
+Nun 
+```bash
+<IP-oder-Web-Adresse>:<PORT-Nummer>
+```
+im Webbrowser aufrufen und das Resultat betrachten.
