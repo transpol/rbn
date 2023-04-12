@@ -297,3 +297,26 @@ docker container stop ubuntu1
 What happens with your second terminal (where you are logged into ubuntu1)?
 
 Stop all other containers.
+
+## First Dockerfile - Start a simple website with nginx (Example first lecture)
+
+Jetzt bauen wir unser erstes eigenes Docker image mit Hilfe eines Dockerfile (genau so benamt!) mit untigem Inhalt. Doch halt, erstmal legen wir ein Verzeichnis an für unser Projekt, z.B. simple_html und wechseln mit cd dorthin. Jetzt das Dockerfile:
+```bash
+FROM nginx:1.11-alpine
+COPY index.html /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+```
+Die erste Zeile ist das "base image", ein Linux-System mit dem Webserver nginx. Die Versionsnummer 1.11-alpine garantiert, dass unser Image stabil bleibt selbst wenn ein neueres nginx auf Docker Hub verfügbar wäre. In der zweiten Zeile kopieren wir eine eigene index.html (die wir erstellen) in den entsprechenden Pfad in unserem Docker container (der default Pfad von nginx für die anzubietenden Webseiten). In der dritten Zeile öffnen wir den Web-Port 80 nach außen. Und in der vierten und letzten Zeile starten wir den nginx als Dämon im Hintergrund.
+
+Jetzt können wir unser Image bauen (mit dem Namen rbn-server):
+```bash
+docker build -t rbn-server .
+```
+Der Punkt am Schluß ist wichtig und gibt an, dass wir uns auf das aktuelle Verzeichnis beziehen, in dem sowohl die index.html als auch das Dockerfile liegen.
+
+Jetzt können wir unseren Container schon starten ... doch Vorsicht, das erste 80 muss mit dem zugewiesenen Port ersetzt werden:
+```bash
+docker run -d -p 80:80 rbn-server
+```
+Hier steht das "-d" für "detached mode" und bedeutet soviel, als dass der Docker container im Hintergrund läuft. "-p 80:80" leitet den internen Port auf den äußeren Port 80 weiter. 
