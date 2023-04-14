@@ -339,6 +339,7 @@ Hier ist das Dockerfile:
 FROM openjdk:17-jdk-slim
 WORKDIR /app
 COPY rest-service-complete-0.0.1-SNAPSHOT.jar /app
+EXPOSE 8080
 CMD ["java", "-jar", "rest-service-complete-0.0.1-SNAPSHOT.jar"]
 ```
 
