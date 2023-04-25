@@ -1,17 +1,63 @@
 # Creating your own Web-App based on a REST-Service
 
-## Install Angular Environment (on any computer)
+## Create Flask-App (Python-based)
 
-* Install nodejs
-* In einer Kommando-Shell (z.B. in einem Docker Container basierend auf dem Node image):
-
-```bash
-npm install -g @angular/cli
-```
-
-Erzeuge ein neues Projekt (evtl. mit anderem Namen statt my-app):
+* Create app.py with the following content:
 
 ```bash
-ng new my-app
+from flask import Flask, render_template
+import requests
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    response = requests.get('http://localhost:8080/greeting')
+    todo = response.json()
+    return render_template('index.html', todo=todo)
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0')
 ```
 
+This code defines a Flask application with a single route that consumes the REST API at localhost:8080 (Übung 2) and passes the returned JSON object to an HTML template called index.html.
+
+This is the content of templates/index.html:
+
+```bash
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Frontend</title>
+</head>
+<body>
+    <h1>Todo</h1>
+    <p>ID: {{ todo['id'] }}</p>
+    <p>Content: {{ todo['content'] }}</p>
+</body>
+</html>
+```
+
+And this is the content of Dockerfile:
+```bash
+FROM python:3.8-slim-buster
+
+WORKDIR /app
+
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+EXPOSE 5000
+
+CMD ["python", "app.py"]
+```
+
+Ahhh, wait, requirements.txt (for Python to work) is missing:
+
+```bash
+Flask==2.0.2
+requests==2.26.0
+```
