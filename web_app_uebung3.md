@@ -123,5 +123,7 @@ Jetzt wird das Projekt aus Übung 2 (REST Service) gebaut:
 ```bash
 mvn clean package
 ```
+4. Danach befindet sich das fertig gebaute JAR-File im Verzeichnis *target*
+5. Sie können es nun deployen, so wie in Übung 2. Dabei wird automatisch per Spring-Boot ein Tomcat-Server korrekt konfiguriert.
 
 **Zeigen Sie bitte Ihr Ergebnis bis ca. 120 Minuten nach Beginn der Übung dem Dozenten. (80% der Leistung)**
