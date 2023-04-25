@@ -127,3 +127,11 @@ mvn clean package
 5. Sie können es nun deployen, so wie in Übung 2. Dabei wird automatisch per Spring-Boot ein Tomcat-Server korrekt konfiguriert.
 
 **Zeigen Sie bitte Ihr Ergebnis bis ca. 120 Minuten nach Beginn der Übung dem Dozenten. (80% der Leistung)**
+
+## Create Own Spring-App
+
+1. Initialize your project using the start.spring.io Website, make sure to include the Spring Web Dependency, chose Java as language, and Maven as Project.
+2. Import your new project into Eclipse as Maven project (via pom.xml).
+3. Create your own RestController class, e.g.
+```bash
+```
