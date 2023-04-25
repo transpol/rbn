@@ -1,5 +1,7 @@
 # Creating your own Web-App based on a REST-Service
 
+**Bitte beachten Sie unten die fettmarkierten Stellen an denen Sie Ihre Leistung dem Dozenten präsentieren sollen**
+
 ## Create Flask-App (Python-based)
 
 * Create app.py with the following content:
@@ -61,3 +63,18 @@ Ahhh, wait, requirements.txt (for Python to work) is missing:
 Flask==2.0.2
 requests==2.26.0
 ```
+
+This can built like before ...
+
+```bash
+docker build -t flask-frontend .
+```
+
+Deploy ...
+```bash
+docker run -d -p 5000:5000 flask-frontend
+```
+
+Now open localhost:5000 (or any other host on which you have deployed).
+
+**Zeigen Sie bitte Ihr Ergebnis bis ca. 60 Minuten nach Beginn der Übung dem Dozenten. (20% der Leistung)**
