@@ -4,7 +4,7 @@
 
 ## Create Flask-App (Python-based)
 
-* Create app.py with the following content:
+Create app.py with the following content:
 
 ```bash
 from flask import Flask, render_template
@@ -77,4 +77,51 @@ docker run -d -p 5000:5000 flask-frontend
 
 Now open localhost:5000 (or any other host on which you have deployed).
 
-**Zeigen Sie bitte Ihr Ergebnis bis ca. 60 Minuten nach Beginn der Übung dem Dozenten. (20% der Leistung)**
+**Zeigen Sie bitte Ihr Ergebnis bis ca. 60 Minuten nach Beginn der Übung dem Dozenten. (40% der Leistung)**
+
+Hint: Later version of your flask-app may require you to iterate over an array of records returned by your app, in this case, the index.html needs to be modified:
+
+```bash
+    <ul>
+        {% for item in todo %}
+        <li>
+            <p>ID: {{ item['id'] }}</p>
+            <p>Content: {{ item['content'] }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+```
+
+## Installing Maven & Build Project (complete) from Übung 2
+
+1. Unpack the archive where you would like to store the binaries, e.g.:
+   * Unix-based operating systems (Linux, Solaris and Mac OS X):
+      tar zxvf apache-maven-3.x.y.tar.gz
+   * Windows:
+      unzip apache-maven-3.x.y.zip
+
+2. A directory called "apache-maven-3.x.y" will be created. It might be good to have it under C:\Program Files\ on Windows.
+
+3. Add the bin directory to your PATH, e.g.:
+
+    * Unix-based operating systems (Linux, Solaris and Mac OS X):
+      export PATH=/usr/local/apache-maven-3.x.y/bin:$PATH
+    * Windows:
+      set PATH="c:\program files\apache-maven-3.x.y\bin";%PATH%
+
+4. Make sure JAVA_HOME is set to the location of your JDK
+
+5. Run "mvn --version" to verify that it is correctly installed.
+
+For complete documentation, see https://maven.apache.org/download.html#Installation
+
+Jetzt wird das Projekt aus Übung 2 (REST Service) gebaut:
+
+1. Clone das Project aus Übung 2 (REST Service)
+2. Importiere das Projekt (complete) in Eclipse als Maven-Projekt
+3. Baue das Projekt mit 
+```bash
+mvn clean package
+```
+
+**Zeigen Sie bitte Ihr Ergebnis bis ca. 120 Minuten nach Beginn der Übung dem Dozenten. (80% der Leistung)**
