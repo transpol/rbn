@@ -132,6 +132,61 @@ mvn clean package
 
 1. Initialize your project using the start.spring.io Website, make sure to include the Spring Web Dependency, chose Java as language, and Maven as Project.
 2. Import your new project into Eclipse as Maven project (via pom.xml).
-3. Create your own RestController class, e.g.
+3. Create your own RestController.java, e.g.
 ```bash
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+
+@RestController
+public class OurController {
+
+    @GetMapping("/users")
+    public List<User> getUsers() {
+        List<User> users = new ArrayList<>();
+        users.add(new User("John", "Doe"));
+        users.add(new User("Jane", "Smith"));
+        return users;
+    }
+}
 ```
+
+using User.java as follows:
+
+```bash
+package rbn.demo.firstRBN;
+
+public class User {
+    private String firstName;
+    private String lastName;
+
+    public User(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+}
+```
+4. Build with mvn clean package
+5. Create a Flask-frontend iterating over the users ...
+6. Deploy everything in two docker containers ...
+
+**Zeigen Sie bitte Ihr Ergebnis bis ca. 180 Minuten nach Beginn/ am Ende der Übung dem Dozenten. (100% der Leistung)**
