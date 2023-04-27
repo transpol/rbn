@@ -99,7 +99,9 @@ Hint: Later version of your flask-app may require you to iterate over an array o
 ```
 
 ## Installing Maven & Build Project (complete) from Übung 2
-
+    
+Download apache-maven-3.x.y ...   
+    
 1. Unpack the archive where you would like to store the binaries, e.g.:
    * Unix-based operating systems (Linux, Solaris and Mac OS X):
       tar zxvf apache-maven-3.x.y.tar.gz
@@ -115,17 +117,16 @@ Hint: Later version of your flask-app may require you to iterate over an array o
     * Windows:
       set PATH="c:\program files\apache-maven-3.x.y\bin";%PATH%
 
-4. Make sure JAVA_HOME is set to the location of your JDK
+4. Make sure JAVA_HOME is set to the location of your JDK, e.g. C:\Programme\Java\jdk-17 on Windows
 
-5. Run "mvn --version" to verify that it is correctly installed.
+5. Run "mvn -v" to verify that it is correctly installed. Double-check that "java -version" points to the same Version.
 
 For complete documentation, see https://maven.apache.org/download.html#Installation
 
-Jetzt wird das Projekt aus Übung 2 (REST Service) gebaut:
+Jetzt wird das REST-Projekt aus Übung 1 - Aufgabe 2 gebaut, siehe https://spring.io/guides/gs/rest-service/:
 
-1. Clone das Project aus Übung 2 (REST Service)
-2. Importiere das Projekt (complete) in Eclipse als Maven-Projekt
-3. Baue das Projekt mit 
+1. Clone das Project: git clone https://github.com/spring-guides/gs-rest-service.git
+2. Baue das Projekt gs-rest-service/complete mit 
 ```bash
 mvn clean package
 ```
