@@ -2,9 +2,14 @@
 
 **Bitte beachten Sie unten die fettmarkierten Stellen an denen Sie Ihre Leistung dem Dozenten präsentieren sollen**
 
-## Create Flask-App (Python-based)
+## Grundsätzliches
 
-Create app.py with the following content:
+1. Jedes Docker-Projekt sollten Sie in einem eigenen Verzeichnis anlegen, möglichst unter <HOME>/docker. Verzeichnisnamen sollten dabei keine Leer- oder Sonderzeichen enthalten.
+2. Jede Text-Datei enthält lediglich die angezeigten Zeichen und heißt genau so, wie jeweils angegeben. Um bei Windows und Mac sicher zu gehen, sollten Sie unbedingt die Dateien einzeln mit *more \<Dateiname\>* anzeigen lassen und mit *ls* bzw. *dir* die Verzeichnisse ausgeben lassen.
+
+## Create Flask-App (Python-based, Docker-Projekt)
+
+Legen Sie ein Verzeichnis für ein neues Docker-Projekt an. In diesem Verzeichnis: Create app.py (Text-Datei) with the following content:
 
 ```bash
 from flask import Flask, render_template
@@ -22,9 +27,9 @@ if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
 ```
 
-This code defines a Flask application with a single route that consumes the REST API at localhost:8080 (Übung 2) and passes the returned JSON object to an HTML template called index.html.
+This code defines a Flask application with a single route that consumes the REST API at *IP-Adresse:Port-Nummer* and passes the returned JSON object to an HTML template called index.html.
 
-This is the content of templates/index.html:
+This is the content of templates/index.html (Text-Datei in Unterverzeichnis templates):
 
 ```bash
 <!DOCTYPE html>
@@ -40,7 +45,8 @@ This is the content of templates/index.html:
 </html>
 ```
 
-And this is the content of Dockerfile:
+And this is the content of the Dockerfile (Text-Datei):
+    
 ```bash
 FROM python:3.8-slim-buster
 
@@ -57,7 +63,7 @@ EXPOSE 5000
 CMD ["python", "app.py"]
 ```
 
-Ahhh, wait, requirements.txt (for Python to work) is missing:
+Ahhh, wait, requirements.txt (Text-Datei, for Python to work) is missing:
 
 ```bash
 Flask==2.0.2
