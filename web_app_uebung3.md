@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    response = requests.get('http://localhost:8080/greeting')
+    response = requests.get('http://<IP-ADDRESS OF OWN MACHINE OR ubuntu22-001.lehre.hwr-berlin.de>:8080/greeting')
     todo = response.json()
     return render_template('index.html', todo=todo)
 
