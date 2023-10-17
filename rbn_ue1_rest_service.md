@@ -11,6 +11,13 @@ dem Dozenten eine der unten vorgestellten Aufgaben präsentieren und frühestens
 
 Either way: Check with java -version and mvn -v
 
+Use a startup.bat ...
+```bash
+set JAVA_HOME=C:\Program Files\Java\jdk-17
+set Path=%JAVA_HOME%\bin;%Path%
+set Path=H:\apache-maven-3.9.2\bin;%Path%
+```
+
 ## Installing Maven & Build Project
     
 Download apache-maven-3.x.y ...   
