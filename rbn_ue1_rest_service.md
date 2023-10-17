@@ -45,7 +45,7 @@ For complete documentation, see https://maven.apache.org/download.html#Installat
 
 Jetzt wird das REST-Projekt aus Übung 1 - Aufgabe 2 gebaut, siehe https://spring.io/guides/gs/rest-service/:
 
-1. Clone das Project: git clone https://github.com/spring-guides/gs-rest-service.git
+1. Clone das Project: git clone https://github.com/spring-guides/gs-rest-service.git (Hinweis: Falls Sie kein Git haben, beispielsweise weil Sie auf einer VM arbeiten, können Sie auch das ganze Projekt als ZIP-Datei herunterladen)
 2. Baue das Projekt gs-rest-service/complete mit 
 ```bash
 mvn clean package
