@@ -4,6 +4,12 @@
 dem Dozenten eine der unten vorgestellten Aufgaben präsentieren und frühestens nach 70% der Übungszeit eine Bestätigung verlangen. Bitte nutzen Sie die verbleibende 
 Übungszeit (nach Bestätigung oder auch schon davor nach Fertigstellung der Übung) unbedingt um Ihr Projekt weiter zu entwickeln.**
 
+## Decide where to deploy
+
+1. Own Personal Computer: Install Java, Eclipse, and Maven (see below)
+2. On VM: Connect from Pool PC with VMWare Horizon Player and deploy Maven on H: ... Java and Eclipse exist
+Either way: Check with java -version and mvn -v
+
 ## Installing Maven & Build Project
     
 Download apache-maven-3.x.y ...   
