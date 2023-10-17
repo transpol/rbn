@@ -7,7 +7,7 @@ dem Dozenten eine der unten vorgestellten Aufgaben präsentieren und frühestens
 ## Decide where to deploy
 
 1. Own Personal Computer: Install Java, Eclipse, and Maven (see below)
-2. On VM: Connect from Pool PC with VMWare Horizon Player and deploy Maven on H: ... Java and Eclipse exist
+2. On VM: Connect from Pool PC with VMWare Horizon Client (vpool.hwr-berlin.de, Moodle Credentials) and deploy Maven on H: ... Java and Eclipse exist
 
 Either way: Check with java -version and mvn -v
 
