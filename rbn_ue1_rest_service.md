@@ -8,6 +8,7 @@ dem Dozenten eine der unten vorgestellten Aufgaben präsentieren und frühestens
 
 1. Own Personal Computer: Install Java, Eclipse, and Maven (see below)
 2. On VM: Connect from Pool PC with VMWare Horizon Player and deploy Maven on H: ... Java and Eclipse exist
+
 Either way: Check with java -version and mvn -v
 
 ## Installing Maven & Build Project
