@@ -334,7 +334,7 @@ im Webbrowser aufrufen und das Resultat betrachten.
 ## Second Dockerfile - Create a simple REST Service with Java (JSON, Java, Maven, Spring Boot)
 
 Um mit Java einen Rest Service to bauen und diesen per Spring zu deployen, sind folgende Schritte notwendig:
-* Das Jar-File muss erstellt werden (mit Java, Spring Boot und Maven), folgen Sie hier bitte dem Tutorial https://spring.io/guides/gs/rest-service/
+* Das Jar-File muss erstellt werden (mit Java, Spring Boot und Maven), folgen Sie hier bitte dem Tutorial https://spring.io/guides/gs/rest-service/ analog zur ersten Übung, oder verwenden Sie das fertige JAR-File, entweder Ihres aus der letzten Übung oder rest-service-complete...jar hier aus dem Repo.
 * Das Jar-File muss per Docker deployt werden
 * Der REST-Service sollte getestet werden, folgen Sie hierzu wieder dem Tutorial
 
