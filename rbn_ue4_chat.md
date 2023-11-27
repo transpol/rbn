@@ -6,7 +6,7 @@
   
 2. Sie sollten Maven installiert haben oder Maven aus Ihrer IDE heraus aufrufen können. Eclipse wird vom Dozenten insbesondere unterstützt.
 
-3. Es empfiehlt sich, wie in Übung 1 auf der VPool-VM zu arbeiten und dort Maven auf dem H-Laufwerk zu installieren.
+3. Es empfiehlt sich, auf der VPool-VM (an der HWR via Pool-PC) oder auf dem Pool-PC zu arbeiten und dort Maven auf dem H-Laufwerk zu installieren, da Sie sonst keine IP-Adresse im HWR-Netzwerk haben und daher auch die Übung nicht bearbeiten können.
      
 ## "Java Net" als normales Java Projekt ausführen
 
@@ -19,12 +19,12 @@
 
 ## Erweitern Sie das Programm um eine Komponente für Nachrichten
 
-1. Erstellen Sie eine Klasse ChatReceiver für das Empfangen von Nachrichten auf Port 5001, analog zum vorherigen ChatServer.
-2. Erstellen Sie eine Klasse ChatSender für das Senden von Nachrichten an alle Peers (die zuvor mit ChatClient abgefragt wurden).
-3. Für die Kommunikation zwischen ChatSender und ChatReceiver können Sie die Klassen MessageResponse und ChatMessage verwenden, die ebenfalls auf Moodle verfügbar sind. 
-4. Wenn Sie diese Klassen verwenden, können Sie den ChatSender auch gegen einen Beispiels-ChatReceiver testen, der vorraussichtlich auf ubuntu22-001.lehre.hwr-berlin.de:5001 vom Dozenten deployt wird.
-5. Übrigens können Sie - falls Sie von einer VM des vpool aus Arbeiten - auch den ChatServer des Dozenten verwenden, der voraussichtlich unter ubuntu22-001.lehre.hwr-berlin.de:5000 deployt sein wird.
-6. Sie müssen auf einer VM des VPool arbeiten, weil Sie sonst innerhalb des HWR-Netzes nicht unter einer festen IP erreichbar sein werden und daher keine echte Kommunikation zwischen den Kommilitonen möglich sein würde.
+**Der Dozent wird auf seiner VM einen ChatReceiver bereitstellen, der eine ChatMessage annimmt und eine MessageResponse zurück sendet. Ebenso wird auf Port 5000 ein ChatServer laufen,
+der eine PeerInfo erwartet und eine RegistrationResponse zurück sendet. Die IP-Adresse bzw. der Domainname sowie die Ports werden in der Übung bekannt gegeben.**
+
+1. Testen Sie den ChatClient gegen den ChatServer des Dozenten.
+2. Erstellen Sie eine Klasse ChatSender für das Senden einer Nachricht an den ChatReceiver des Dozenten. Verwenden Sie dabei die Klassen MessageResponse und ChatMessage, die ebenfalls auf Moodle verfügbar sind.
+3. Erstellen Sie eine Klasse ChatReceiver für das Empfangen von Nachrichten auf Port 5001, analog zum vorherigen ChatServer. Testen Sie den ChatSender gegen Ihren eigenen ChatReceiver.
 
 ## Erweitern Sie den ChatSender zu einer richtigen ChatApp
 
